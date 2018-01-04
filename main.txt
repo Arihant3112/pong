@@ -1,0 +1,42 @@
+
+ball b;
+bar b1;
+boolean playon;
+int score;
+void setup()
+{
+  
+size(600,600);
+colorMode(HSB);
+background(255);
+strokeWeight(5);
+playon=true;
+ b=new ball(2,3);
+ b1=new bar();
+ 
+}
+void draw()
+{
+  background(255);
+  if(playon)
+  {
+if(b.movelogo(b1))
+{
+ b.displaylogo(); 
+ b1.displaylogoo();
+b1.movelogoo();
+}
+else
+{
+  playon=false;
+  score=frameCount;
+}
+  }
+  else
+  {
+    fill(0);
+    textSize(32);
+    text("GAME OVER!"+"SCORE=" + score,100,200);
+  }
+
+}

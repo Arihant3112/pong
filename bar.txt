@@ -1,0 +1,38 @@
+
+class bar
+{
+ float x;
+ float y;
+ float halflen; 
+  
+  
+  bar()
+  {
+    x=10;
+    y=height/2;
+    halflen=30;
+  }
+void displaylogoo()
+{
+  strokeWeight(15);
+  stroke(150,255,175);
+  line(x,y-halflen,x,y+halflen);
+  
+}
+void movelogoo()
+{
+  y=mouseY;
+}
+boolean collide(ball b)
+{
+ if(b.x==this.x+30 && b.y>this.y-30 && b.y<this.y+30)
+  {
+    return true;
+  } 
+  else
+  {
+    return false;
+  }
+}
+
+}
